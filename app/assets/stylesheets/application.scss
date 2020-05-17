@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+ .shadow-xl	{
+   box-shadow: 5px 20px 25px -5px rgba(0, 0, 0, 0.1),
+               5px 10px 10px -5px rgba(0, 0, 0, 0.04);
+ }
+
+$primary: #99afaf;
+
+$info: #1f193a;
+
+$success: #63af6d;
+
+$warning: #e09f35;
+
+$danger: #f44336;
+
+$default: #fefefe;
+
+
+@import "bulma";
+
+.notification:not(:last-child) {
+  margin-bottom: 0px;
+}
