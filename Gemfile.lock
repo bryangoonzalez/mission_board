@@ -237,6 +237,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
+    vueonrails (0.3.0)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (4.0.2)
@@ -289,6 +290,7 @@ DEPENDENCIES
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
+  vueonrails
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)

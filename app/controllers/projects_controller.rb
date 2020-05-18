@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
+
   # GET /projects
   # GET /projects.json
   def index
@@ -15,7 +16,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = current_user.projects.build
-    @team = Team.where('id = ?', current_user.team_id)
+    @teams = Team.where('id = ?', current_user.team_id)
   end
 
   # GET /projects/1/edit
@@ -26,7 +27,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(project_params)
+    @project = current_user.projects.build(project_params)
 
     respond_to do |format|
       if @project.save
@@ -58,7 +59,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,7 +70,7 @@ class ProjectsController < ApplicationController
       @project = Project.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
       params.require(:project).permit(:name, :description, :team_id)
     end

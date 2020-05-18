@@ -28,6 +28,7 @@ gem 'gravatar_image_tag', '~> 1.2'
 gem 'jquery-rails', '~> 4.4'
 gem 'wysiwyg-rails', '~> 3.1'
 gem 'public_activity', '~> 1.6', '>= 1.6.4'
+gem 'vueonrails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
