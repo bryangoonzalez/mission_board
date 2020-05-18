@@ -30,6 +30,7 @@ gem 'wysiwyg-rails', '~> 3.1'
 gem 'public_activity', '~> 1.6', '>= 1.6.4'
 gem 'vueonrails'
 gem 'trix-rails', require: 'trix'
+gem 'sendgrid-ruby'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
