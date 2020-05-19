@@ -85,6 +85,11 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
+  AWS::S3::Base.establish_connection!(
+ :access_key_id   => ENV['S3_KEY'],
+ :secret_access_key => ENV['S3_SECRET']
+)
+
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false

@@ -9,7 +9,7 @@ subject = 'Sending with SendGrid is Fun'
 content = Content.new(type: 'text/plain', value: 'and easy to do anywhere, even with Ruby')
 mail = Mail.new(from, subject, to, content)
 
-sg = SendGrid::API.new(api_key: ENV['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'])
+sg = SendGrid::API.new(api_key: ENV['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'])
 response = sg.client.mail._('send').post(request_body: mail.to_json)
 puts response.status_code
 puts response.body
